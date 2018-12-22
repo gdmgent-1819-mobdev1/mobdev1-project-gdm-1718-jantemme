@@ -1,0 +1,24 @@
+{{> header }}
+<div class="page dorms">
+  <h1>{{title}}</h1>
+  <div class="body">
+    {{#if loading}}
+      Loading data, please wait...
+    {{else}}
+    <div class="container">
+      {{#each posts}}
+        <div class="dorm">
+          <h3>{{this.Type}}</h3>
+          <p>{{this.Plaats}}</p>
+          <p>{{this.Straat}}{{this.Huisummer}}</p>
+          <p> Privé keuken: {{this.[Privé keuken]}}</p>
+          <p> Privé douche: {{this.[Privé douche]}}</p>
+          <p> Privé toilet: {{this.[Privé toilet]}}</p>
+        <!--<img src="https://source.unsplash.com/1600x900/?interior" alt="">-->
+        </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+</div>
+{{> footer }}

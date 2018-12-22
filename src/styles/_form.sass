@@ -1,0 +1,79 @@
+.sign
+    margin: 10px auto
+    background-color: white
+    width: 50%
+    height: 100%
+    padding: 20px 20px 0px 20px
+    color: $color-purple-dark
+    text-align: left
+    display: none
+    --webkit-box-shadow: 10px 18px 43px -1px rgba(0,0,0,0.14)
+    -moz-box-shadow: 10px 18px 43px -1px rgba(0,0,0,0.14)
+    box-shadow: 10px 18px 43px -1px rgba(0,0,0,0.14)
+    border-radius: 5px
+    @media screen and (max-width: $break-large)
+            width: 80%
+
+    #signup_school_label
+        display: none
+
+    #signup_school
+        display: none
+
+    h1
+        margin: 0 0 6px 0
+        text-align: left
+        font-weight: 300
+    
+    input
+        margin-right: 10px
+        margin-bottom: 12px
+
+    label
+        margin-right: 6px
+        margin-bottom: 12px
+        width: 180px
+        clear: left
+        text-align: right
+        padding-right: 10px
+        @media screen and (max-width: $break-large)
+            clear: none
+            text-align: left
+    
+    button 
+        width: 80px
+        height: 30px
+        font-size: 12px
+        border-radius: 15px
+        clear: left
+        text-align: center
+        margin: 10px
+        border: none
+        background-color: $color-mint
+        cursor: pointer
+    
+    input, label, button
+        float: left
+
+    .signup
+        width: 400px
+        height: 300px
+        @media screen and (max-width: $break-large)
+            display: flex
+            flex-direction: column
+            height: 100%
+            width: 140%
+
+    .error
+        width: 100%
+        text-align: center
+        margin-top: 60px
+
+    .radio
+        display: inline-block
+        width: 200px
+        height: 100px
+
+        input
+            margin: 10px
+
