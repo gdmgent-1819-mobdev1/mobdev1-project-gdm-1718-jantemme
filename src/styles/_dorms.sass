@@ -1,12 +1,36 @@
 .dorms
+    height: 100%
+    padding-bottom: 100px
+
+    .dorms_header
+        display: flex
+        justify-content: space-between
+        flex-direction: row
+        width: 90%
+        margin: 0 auto
+
+    button
+        width: 120px
+        height: 30px
+        font-size: 12px
+        border-radius: 15px
+        text-align: center
+        margin-top: 15px
+        border: none
+        background-color: $color-mint
+        cursor: pointer
+
     .container
         display: flex
         flex-direction: row
         flex-wrap: wrap
         justify-content: center
         width: 100%
-        height: 600px
+        height: 100%
+        padding-bottom: 50px
         .dorm
+            display: inline-block
+            background-color: white
             margin: auto
             text-align: left
             padding: 10px
@@ -17,5 +41,28 @@
             -moz-box-shadow: 10px 18px 43px -1px rgba(0,0,0,0.14)
             box-shadow: 10px 18px 43px -1px rgba(0,0,0,0.14)
 
+            .dorm_adress
+                margin-bottom: 4px
+                font-weight: 900
+
+            .dorm_info
+                margin-left: 12px
+                font-weight: 300
+
+            .dorm_price
+                font-weight: 300
+                text-align: right
+
             p
                 margin: 2px
+
+            img
+                position: relative
+                float: left
+                width:  100%
+                height: 250px
+                background-position: 50% 50%
+                background-repeat:  no-repeat
+                background-size:  contain
+                z-index: 0
+                margin-bottom: 4px

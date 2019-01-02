@@ -1,5 +1,6 @@
 class Student {
-  constructor(name, surname, email, adress, tel, school, place, status) {
+  constructor(userId, name, surname, email, adress, tel, school, place, status) {
+    this.user_id = userId;
     this.name = name;
     this.surname = surname;
     this.email = email;
@@ -12,7 +13,8 @@ class Student {
 }
 
 class Kotbaas {
-  constructor(name, surname, email, adress, tel, place, status) {
+  constructor(userId, name, surname, email, adress, tel, place, status) {
+    this.userId = userId;
     this.name = name;
     this.surname = surname;
     this.email = email;

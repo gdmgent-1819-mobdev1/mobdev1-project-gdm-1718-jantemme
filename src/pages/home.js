@@ -4,26 +4,16 @@
 import { compile } from 'handlebars';
 import update from '../helpers/update';
 import { userInfo } from 'os';
-import { 
-  signup,
-  login,
+import {
   logout,
   sendEmailVerification,
   sendNotification,
   requestNotificationPermission,
-  storeUser,
-  showUserInfo,
-  showSignUp,
-  showLogin,
   toggleMobileMenu,
   hideMobileMenu,
-  hideSchoolField,
-  showSchoolField,
   showLogout,
   hideLogout,
-  hideLoginSignUp,
-  addGenerallisteners,
-  addFormlisteners
+  addGenerallisteners
   } from '../helpers/globalListeners.js';
 
 // Import the template to use
@@ -275,6 +265,6 @@ export default () => {
   document.getElementById('signup_radio_loaner').addEventListener('change', hideSchoolField);
 */
   addGenerallisteners();
-  addFormlisteners();
+  //addFormlisteners();
   requestNotificationPermission();
 };

@@ -1,6 +1,8 @@
 /* eslint-disable */
 // Only import the compile function from handlebars instead of the entire library
-import { compile } from 'handlebars';
+import {
+  compile
+} from 'handlebars';
 import mapboxgl from 'mapbox-gl';
 import config from '../config';
 import {
@@ -8,19 +10,14 @@ import {
   sendEmailVerification,
   sendNotification,
   requestNotificationPermission,
-  storeUser,
-  showUserInfo,
-  showSignUp,
-  showLogin,
   toggleMobileMenu,
   hideMobileMenu,
   hideSchoolField,
   showSchoolField,
   showLogout,
   hideLogout,
-  hideLoginSignUp,
   addGenerallisteners
-  } from '../helpers/globalListeners.js';
+} from '../helpers/globalListeners.js';
 
 // Import the update helper
 import update from '../helpers/update';
@@ -30,8 +27,10 @@ const mapTemplate = require('../templates/page-with-map.handlebars');
 
 export default () => {
   // Data to be passed to the template
-  const title = 'Mapbox example';
-  update(compile(mapTemplate)({ title }));
+  const title = 'Map';
+  update(compile(mapTemplate)({
+    title
+  }));
 
   addGenerallisteners();
 
@@ -41,9 +40,9 @@ export default () => {
     // eslint-disable-next-line no-unused-vars
     const map = new mapboxgl.Map({
       container: 'map',
-      center: [-74.50, 40],
+      center: [3.72667, 51.05],
       style: 'mapbox://styles/mapbox/streets-v9',
-      zoom: 1,
+      zoom: 11,
     });
   } else {
     console.error('Mapbox will crash the page if no access token is given.');

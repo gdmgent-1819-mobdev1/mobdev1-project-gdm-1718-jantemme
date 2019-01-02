@@ -1,24 +1,26 @@
 {{> header }}
 <div class="page dorms">
-  <h1>{{title}}</h1>
-  <div class="body">
+  <div>
+    <div class="dorms_header">
+      <h1>{{title}}</h1>
+      <a href="#/addDorm"><button>Add your dorm</button></a>
+    </div>
     {{#if loading}}
       Loading data, please wait...
     {{else}}
     <div class="container">
       {{#each posts}}
-        <div class="dorm">
-          <h3>{{this.Type}}</h3>
-          <p>{{this.Plaats}}</p>
-          <p>{{this.Straat}}{{this.Huisummer}}</p>
-          <p> Privé keuken: {{this.[Privé keuken]}}</p>
-          <p> Privé douche: {{this.[Privé douche]}}</p>
-          <p> Privé toilet: {{this.[Privé toilet]}}</p>
-        <!--<img src="https://source.unsplash.com/1600x900/?interior" alt="">-->
+        <div id="{{this.dorm_id}}" class="dorm">
+          <img src={{this.image}} alt="">
+          <h1>{{this.type}}</h1>
+          <p class="dorm_adress">{{this.place}}, {{this.streetAndNumber}}</p>
+          <p class="dorm_info"> Kitchen: &nbsp&nbsp{{this.kitchen_status}}</p>
+          <p class="dorm_info"> Shower: &nbsp&nbsp{{this.shower_status}}</p>
+          <p class="dorm_info"> Toilet: &nbsp&nbsp&nbsp&nbsp&nbsp {{this.toilet_status}}</p>
+          <h1 class="dorm_price">€{{this.price}}/month</h1>
         </div>
       {{/each}}
     </div>
     {{/if}}
-  </div>
 </div>
 {{> footer }}
