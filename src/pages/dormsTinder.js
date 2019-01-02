@@ -67,7 +67,6 @@ const tinder = (title, loading, dorm, likes, counter, dormArr,user) => {
   }
 
   document.getElementById('button-like').addEventListener('click', function() {
-    console.log('pushed');
     counter++;
     if(counter < (dormArr.length + 1))
     {
@@ -76,9 +75,8 @@ const tinder = (title, loading, dorm, likes, counter, dormArr,user) => {
         likes = JSON.parse(localStorage.getItem("likes"));
         for(let i = 0; i < likes.length; i++)
         {
-          if(dorm == likes[i])
+          if(JSON.stringify(dorm) == JSON.stringify(likes[i]))
           {
-            console.log('skrr');
             double = true;
           }
         }
@@ -95,12 +93,7 @@ const tinder = (title, loading, dorm, likes, counter, dormArr,user) => {
     }
     else
       sendNotification("You've seen all dorms.")
-
-    //if(localStorage.getItem("likes"))
-      //likes = JSON.parse(localStorage.getItem("likes"));
-
-    //localStorage.setItem("likes", JSON.stringify(likes));
-    console.log(likes);
+      
     localStorage.setItem('dorm_id', dorm.dorm_id);
     tinder(title, loading, dorm, likes, counter, dormArr, user);
   });

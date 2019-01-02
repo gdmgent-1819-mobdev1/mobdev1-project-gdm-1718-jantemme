@@ -110,7 +110,7 @@ const login = (e) => {
       sendNotification('You are now logged in successfully!');
       storeUser(response.user);
       setTimeout(function () {
-        showUserInfo(userObject);
+        //showUserInfo(userObject);
         checkForUser();
       }, 500);
       setTimeout(function () {
@@ -175,6 +175,7 @@ const logout = () => {
       document.getElementById('btn-signup').style.display = 'inline-block';
       document.getElementById('btn-login-2').style.display = 'inline-block';
       document.getElementById('btn-signup-2').style.display = 'inline-block';
+      window.location.reload();
     }).catch(function (error) {});
 }
 

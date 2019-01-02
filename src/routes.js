@@ -9,11 +9,13 @@ import SignUpView from './pages/signUp';
 import LoginView from './pages/login';
 import addDormView from './pages/addDorm';
 import dormDetailView from './pages/dormDetail';
+import LikesView from './pages/likes';
 
 export default [
   { path: '/', view: HomeView },
   { path: '/about', view: AboutView },
   { path: '/dormsList', view: DormsListView },
+  { path: '/likes', view: LikesView },
   { path: '/dormsTinder', view: DormsTinderView },
   { path: '/mapbox', view: MapboxView },
   { path: '/addDorm', view: addDormView },

@@ -1,5 +1,58 @@
+.modal
+    display: none
+    position: fixed
+    z-index: 1
+    right: 0
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: rgba(0,0,0,0.4)
+
+    .modal-content
+    background-color: #fff
+    margin: 15% auto
+    padding: 20px
+    width: 80%
+
+
+#fb-share-button
+    background: #3b5998
+    margin-top: 15px
+    height: 18px
+    border-radius: 3px
+    font-weight: 600
+    padding: 5px 8px
+    display: inline-block
+    position: static
+
+
+#fb-share-button:hover 
+    cursor: pointer
+    background: #213A6F
+
+
+#fb-share-button svg
+    width: 18px
+    fill: white
+    vertical-align: middle
+    border-radius: 2px
+
+
+#fb-share-button span
+    vertical-align: middle
+    color: white
+    font-size: 14px
+    padding: 0 3px
+
+    
 .dorms
     height: 100%
+
+    .dorm_footer
+        display: flex
+        justify-content: space-between
 
     .dorms_header
         display: flex
@@ -16,6 +69,8 @@
 
         #button-AddDorm
             display: none
+            margin: 6px 0
+            height: 27px
 
         .view
             margin: auto 0
@@ -102,12 +157,14 @@
             font-weight: 300
 
         img
+            display: flex
+            justify-content: space-around
+            margin: 0 auto 4px auto
             width:  100%
             height: 250px
             background-position: 50% 50%
             background-repeat:  no-repeat
             object-fit:  cover
             z-index: 0
-            margin-bottom: 4px
             @media screen and (min-width: $break-medium)
                 width: 350px

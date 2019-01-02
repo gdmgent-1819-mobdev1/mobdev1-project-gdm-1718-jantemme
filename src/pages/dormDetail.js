@@ -57,6 +57,25 @@ export default () => {
     });
     // Run the update helper to update the template
     update(compile(dormDetailTemplate)({ loading, dorm }));
+
+    document.getElementById("button_message").addEventListener("click", function() {
+      if(localStorage.getItem("User"))
+        window.location.assign("#/chat");
+      else
+        window.location.assign("#/login");
+    });
+
+    var fbButton = document.getElementById('fb-share-button');
+    var url = "google.com";
+    
+    fbButton.addEventListener('click', function() {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+            'facebook-share-dialog',
+            'width=800,height=600'
+        );
+        return false;
+    });
+
     addGenerallisteners();
   });
 

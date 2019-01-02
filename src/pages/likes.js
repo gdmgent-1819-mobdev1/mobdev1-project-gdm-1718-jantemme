@@ -18,28 +18,27 @@ const { getInstance } = require('../firebase/firebase');
 
 const firebase = getInstance();
 // Import the template to use
-const dormsListTemplate = require('../templates/dormsList.handlebars');
+const dormsListTemplate = require('../templates/likes.handlebars');
 
 export default () => {
   // Data to be passed to the template
   let loading = true;
   let posts = {};
-  const title = 'Dorms';
+  const title = 'Likes';
 
   let user = JSON.parse(localStorage.getItem('User'));
 
   // Return the compiled template to the router
   update(compile(dormsListTemplate)({ title, loading, posts }));
 
-  const database = firebase.database().ref('/dorms');
-  database.on('value', (snapshot) => {
-    posts = snapshot.val();
+    posts = JSON.parse(localStorage.getItem("likes"));
+    console.log(posts)
     loading = false;
     // Run the update helper to update the template
     update(compile(dormsListTemplate)({ title, loading, posts }));
 
     const btn = document.getElementById("button_filter");
-    const modal = document.getElementById("modal_filter");    
+    const modal = document.getElementById("modal_filter");
   
     btn.onclick = function() {
       modal.style.display = "block";
@@ -68,7 +67,6 @@ export default () => {
     }
 
     addGenerallisteners();
-  });
 
 }
 

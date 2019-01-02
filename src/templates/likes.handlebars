@@ -31,7 +31,10 @@
           <p class="dorm_info"> Kitchen: &nbsp&nbsp{{this.kitchen_status}}</p>
           <p class="dorm_info"> Shower: &nbsp&nbsp{{this.shower_status}}</p>
           <p class="dorm_info"> Toilet: &nbsp&nbsp&nbsp&nbsp&nbsp {{this.toilet_status}}</p>
-          <h1 class="dorm_price">€{{this.price}}/month</h1>
+          <div style="display: flex; justify-content: space-between">
+            <button id="button_remove_like">Remove form likes</button>
+            <h1 class="dorm_price">€{{this.price}}/month</h1> 
+          </div>
         </div>
       {{/each}}
     </div>
