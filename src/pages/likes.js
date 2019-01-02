@@ -66,6 +66,10 @@ export default () => {
       document.getElementById("button-AddDorm").style.display = 'inline-block';
     }
 
+    document.getElementById("button_remove_like").addEventListener("click", function(e) {
+    
+    });
+
     addGenerallisteners();
 
 }

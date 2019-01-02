@@ -19,6 +19,10 @@ import {
   addGenerallisteners
 } from '../helpers/globalListeners.js';
 
+const { getInstance } = require('../firebase/firebase');
+
+const firebase = getInstance();
+
 // Import the update helper
 import update from '../helpers/update';
 
@@ -34,6 +38,8 @@ export default () => {
 
   addGenerallisteners();
 
+  let coordinates;
+
   // Mapbox code
   if (config.mapBoxToken) {
     mapboxgl.accessToken = config.mapBoxToken;
@@ -42,8 +48,28 @@ export default () => {
       container: 'map',
       center: [3.72667, 51.05],
       style: 'mapbox://styles/mapbox/streets-v9',
-      zoom: 11,
+      zoom: 12,
     });
+
+    const database = firebase.database().ref('/dorms');
+    database.on('value', (snapshot) => {
+      snapshot.forEach(function (data) {
+        let dorm = data.val();
+        fetch(`http://api.mapbox.com/geocoding/v5/mapbox.places/${dorm.streetAndNumber} ${dorm.place}.json?access_token=${config.mapBoxToken}.json`)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(myJson) {
+          coordinates = myJson.features[0].center;
+        });
+
+        console.log(coordinates);
+        new mapboxgl.Marker()
+        .setLngLat(coordinates)
+        .addTo(map);
+      });
+    });
+
   } else {
     console.error('Mapbox will crash the page if no access token is given.');
   }

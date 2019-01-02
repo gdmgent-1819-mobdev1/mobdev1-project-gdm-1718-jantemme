@@ -52,8 +52,6 @@ export default () => {
     })
     .then(function(myJson) {
       coordinates = myJson.features[0].center;
-      console.log(coordinates);
-      console.log(`http://api.mapbox.com/geocoding/v5/mapbox.places/${dorm.streetAndNumber} ${dorm.place}.json?access_token=${config.mapBoxToken}.json`);
     });
     // Run the update helper to update the template
     update(compile(dormDetailTemplate)({ loading, dorm }));
