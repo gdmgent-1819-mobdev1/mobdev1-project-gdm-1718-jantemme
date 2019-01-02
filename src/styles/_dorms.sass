@@ -7,6 +7,18 @@
         flex-direction: row
         width: 90%
         margin: 0 auto
+        font-size: 14px
+        color: $color-purple-dark
+
+        a
+            text-decoration: none
+            color: $color-purple-dark
+
+        #button-AddDorm
+            display: none
+
+        .view
+            margin: auto 0
 
     button
         width: 120px
@@ -94,6 +106,8 @@
             height: 250px
             background-position: 50% 50%
             background-repeat:  no-repeat
-            background-size:  contain
+            object-fit:  cover
             z-index: 0
             margin-bottom: 4px
+            @media screen and (min-width: $break-medium)
+                width: 350px

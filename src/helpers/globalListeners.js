@@ -315,7 +315,6 @@ const checkForUser = () => {
 
 const toggleMobileMenu = () => {
   document.getElementById('navbar-mobile').classList.toggle('show');
-  getUser('-LUvL5GPXhLArP141mXH');
 }
 
 const hideMobileMenu = () => {

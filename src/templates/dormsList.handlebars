@@ -1,9 +1,15 @@
 {{> header }}
 <div class="page dorms">
   <div>
-    <div class="dorms_header">
-      <h1>{{title}}</h1>
-      <a href="#/addDorm"><button>Add your dorm</button></a>
+    <div>
+      <div class="dorms_header">
+        <h1>{{title}}</h1>
+        <a href="#/addDorm" id="button-AddDorm"><button>Add your dorm</button></a>
+      </div>
+      <div class="dorms_header">
+        <div class="view"><a href="#/dormsList">List</a> | <a href="#/dormsTinder">Tinder</a></div>
+        <p>Filter</p>
+      </div>
     </div>
     {{#if loading}}
       Loading data, please wait...

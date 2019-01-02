@@ -1,7 +1,8 @@
 // Pages
 import HomeView from './pages/home';
 import AboutView from './pages/about';
-import FirebaseView from './pages/firebase-example';
+import DormsListView from './pages/dormsList';
+import DormsTinderView from './pages/dormsTinder';
 import MapboxView from './pages/mapbox-example';
 import HeaderView from './pages/header';
 import SignUpView from './pages/signUp';
@@ -12,7 +13,8 @@ import dormDetailView from './pages/dormDetail';
 export default [
   { path: '/', view: HomeView },
   { path: '/about', view: AboutView },
-  { path: '/firebase', view: FirebaseView },
+  { path: '/dormsList', view: DormsListView },
+  { path: '/dormsTinder', view: DormsTinderView },
   { path: '/mapbox', view: MapboxView },
   { path: '/addDorm', view: addDormView },
   { path: '/dormDetail', view: dormDetailView },
