@@ -402,8 +402,6 @@ export {
   storeUser,
   checkForUser,
   showUserInfo,
-  showSignUp,
-  showLogin,
   toggleMobileMenu,
   toggleFurnitureDiscription,
   hideMobileMenu,

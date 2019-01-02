@@ -5,14 +5,27 @@
       Loading data, please wait...
     {{else}}
     <div class="container">
-      <div id="{{dorm.dorm_id}}" class="dorm">
-        <img src={{dorm.image}} alt="">
+      <div id="{{dorm.dorm_id}}" class="detail_dorm">
+        <div class="mapAndImg">
+          <div><img src={{dorm.image}} alt=""></div>
+          <div id="map"></div>
+        </div>
         <h1>{{dorm.type}}</h1>
         <p class="dorm_adress">{{dorm.place}}, {{dorm.streetAndNumber}}</p>
-        <p class="dorm_info"> Kitchen: &nbsp&nbsp{{dorm.kitchen_status}}</p>
-        <p class="dorm_info"> Shower: &nbsp&nbsp{{dorm.shower_status}}</p>
-        <p class="dorm_info"> Toilet: &nbsp&nbsp&nbsp&nbsp&nbsp {{dorm.toilet_status}}</p>
-        <h1 class="dorm_price">€{{dorm.price}}/month</h1>
+        <p class="dorm_info"> Price: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp€{{dorm.price}} per month</p>
+        <p class="dorm_info"> Pledge: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp€{{dorm.pledge}}</p>
+        <p class="dorm_info"> Surface: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{dorm.surface}} m<sup>2</sup></p>
+        <p class="dorm_info"> Floor: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThis dorm is on floor {{dorm.floor}}</p>
+        <p class="dorm_info"> Space: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPlace for {{dorm.peoplePerDorm}}</p>
+        <p class="dorm_info"> Building: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThere are {{dorm.dormAmount}} dorms in this building.</p>
+        <p class="dorm_info"> Kitchen: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{dorm.kitchen_status}}</p>
+        <p class="dorm_info"> Shower: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{dorm.shower_status}}</p>
+        <p class="dorm_info"> Bath: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{dorm.bath_status}}</p>
+        <p class="dorm_info"> Toilet: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{dorm.toilet_status}}</p>
+        <p class="dorm_info"> Furniture: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{dorm.furniture}}</p>
+        <p class="dorm_info"> Discription: </p>
+        <div class="discription"><em>{{dorm.furniture_discription}}</em></div>
+        <button>Message loaner</button>
       </div>
     </div>
     {{/if}}
