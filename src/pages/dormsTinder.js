@@ -5,12 +5,7 @@ import { compile } from 'handlebars';
 // Import the update helper
 import update from '../helpers/update';
 import {
-  logout,
-  sendEmailVerification,
   sendNotification,
-  requestNotificationPermission,
-  toggleMobileMenu,
-  hideMobileMenu,
   addGenerallisteners
   } from '../helpers/globalListeners.js';
 
@@ -99,13 +94,11 @@ const tinder = (title, loading, dorm, likes, counter, dormArr,user) => {
   });
 
   document.getElementById('button-skip').addEventListener('click', function() {
-    console.log('pushed');
     counter++;
     if(counter < dormArr.length)
       dorm = dormArr[counter];
     else
       sendNotification("You've seen all dorms.")
-    console.log(likes);
     localStorage.setItem('dorm_id', dorm.dorm_id);
     tinder(title, loading, dorm, likes, counter, dormArr, user);
   });

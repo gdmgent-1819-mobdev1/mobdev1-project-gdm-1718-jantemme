@@ -5,12 +5,6 @@ import { compile } from 'handlebars';
 // Import the update helper
 import update from '../helpers/update';
 import {
-  logout,
-  sendEmailVerification,
-  sendNotification,
-  requestNotificationPermission,
-  toggleMobileMenu,
-  hideMobileMenu,
   addGenerallisteners
   } from '../helpers/globalListeners.js';
 
@@ -32,7 +26,6 @@ export default () => {
   update(compile(dormsListTemplate)({ title, loading, posts }));
 
     posts = JSON.parse(localStorage.getItem("likes"));
-    console.log(posts)
     loading = false;
     // Run the update helper to update the template
     update(compile(dormsListTemplate)({ title, loading, posts }));
@@ -58,17 +51,13 @@ export default () => {
       const dorm_id = e.currentTarget.getAttribute('id');
       console.log(dorm_id);
       localStorage.setItem('dorm_id', dorm_id);
-      window.location.assign('#/dormDetail')
+      window.location.assign('/#/dormDetail')
     }
 
     if(user && user.status == "Loaner")
     {
       document.getElementById("button-AddDorm").style.display = 'inline-block';
     }
-
-    document.getElementById("button_remove_like").addEventListener("click", function(e) {
-    
-    });
 
     addGenerallisteners();
 

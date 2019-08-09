@@ -6,19 +6,7 @@ import mapboxgl from 'mapbox-gl';
 import config from '../config';
 import { userInfo } from 'os';
 import {
-  logout,
-  addDorm,
-  getImage,
-  sendNotification,
-  requestNotificationPermission,
-  checkForUser,
-  toggleMobileMenu,
-  toggleFurnitureDiscription,
-  hideMobileMenu,
-  showLogout,
-  hideLogout,
   addGenerallisteners,
-  addAddDormListeners
   } from '../helpers/globalListeners.js';
 
   const { getInstance } = require('../firebase/firebase');
@@ -74,7 +62,9 @@ export default () => {
         return false;
     });
 
-    addGenerallisteners();
+    checkIfFavorite(dorm)
+
+    addGenerallisteners()
   });
 
     setTimeout(() => {
@@ -93,4 +83,29 @@ export default () => {
       } else {
         console.error('Mapbox will crash the page if no access token is given.');
       }}, 1000);
+}
+
+const checkIfFavorite = (dorm) => {
+  let favorites = JSON.parse(localStorage.getItem("likes"))
+  let removeFromLikesButton = document.getElementById("button_remove_like")
+  let isFavorite = false
+  let favoriteIndex 
+
+  favorites.forEach(function (favorite, index) {
+    if(favorite.dorm_id == dorm.dorm_id) {
+      isFavorite = true
+      favoriteIndex = index
+    }
+  });
+
+  if(isFavorite) {
+    removeFromLikesButton.style.display = "inline_block"
+
+    removeFromLikesButton.addEventListener("click", function(e) {
+      favorites.splice(favoriteIndex, 1)
+      localStorage.setItem("likes", JSON.stringify(favorites));
+    });
+  } else {
+    removeFromLikesButton.style.display = "none"
+  }
 }
