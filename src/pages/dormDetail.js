@@ -6,6 +6,7 @@ import mapboxgl from 'mapbox-gl';
 import config from '../config';
 import { userInfo } from 'os';
 import {
+  sendNotification,
   addGenerallisteners,
   } from '../helpers/globalListeners.js';
 
@@ -103,7 +104,9 @@ const checkIfFavorite = (dorm) => {
 
     removeFromLikesButton.addEventListener("click", function(e) {
       favorites.splice(favoriteIndex, 1)
-      localStorage.setItem("likes", JSON.stringify(favorites));
+      localStorage.setItem("likes", JSON.stringify(favorites))
+      removeFromLikesButton.style.display = "none"
+      sendNotification("Deleted from favorites.")
     });
   } else {
     removeFromLikesButton.style.display = "none"
